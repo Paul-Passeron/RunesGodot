@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://qurqah5c8hsq"]
+
+[ext_resource type="PackedScene" uid="uid://bu57eh5am6j32" path="res://assets/Rock low poly.dae" id="1_wc8sb"]
+[ext_resource type="Texture2D" uid="uid://bg2vr7ini72n7" path="res://assets/R.jpg" id="2_lw7ua"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkrss"]
+albedo_texture = ExtResource("2_lw7ua")
+texture_filter = 2
+
+[node name="Rock low poly" instance=ExtResource("1_wc8sb")]
+
+[node name="Rock8" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_wkrss")
+
+[node name="Rock7" parent="." index="1"]
+visible = false
+
+[node name="Rock6" parent="." index="2"]
+visible = false
+
+[node name="Rock5" parent="." index="3"]
+visible = false
+
+[node name="Rock4" parent="." index="4"]
+visible = false
+
+[node name="Rock3" parent="." index="5"]
+visible = false
+
+[node name="Rock2" parent="." index="6"]
+visible = false
+
+[node name="Rock1" parent="." index="7"]
+visible = false

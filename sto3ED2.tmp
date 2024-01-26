@@ -1,0 +1,145 @@
+[gd_scene load_steps=4 format=3 uid="uid://v1whn8kf2y36"]
+
+[ext_resource type="PackedScene" uid="uid://cyfackuagr4oj" path="res://RadialContainer.tscn" id="1_63xpg"]
+[ext_resource type="Texture2D" uid="uid://dix0vx8d0p5r5" path="res://assets/wheel.png" id="1_x740s"]
+[ext_resource type="Texture2D" uid="uid://57elrac3x0nx" path="res://assets/stone.png" id="3_s2twy"]
+
+[node name="StoneWheel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 0.36)
+pivot_offset = Vector2(127.061, 127.539)
+texture = ExtResource("1_x740s")
+metadata/_edit_group_ = true
+
+[node name="Container" parent="." instance=ExtResource("1_63xpg")]
+layout_mode = 1
+button_radius = 25
+
+[node name="Control" type="Control" parent="Container"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2twy")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control2" type="Control" parent="Container"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2twy")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control3" type="Control" parent="Container"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Control3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2twy")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control4" type="Control" parent="Container"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Control4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2twy")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control5" type="Control" parent="Container"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Control5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2twy")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control6" type="Control" parent="Container"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Control6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2twy")
+expand_mode = 2
+stretch_mode = 4

@@ -1,0 +1,137 @@
+[gd_scene load_steps=17 format=3 uid="uid://des7dsc3vwbfx"]
+
+[ext_resource type="Texture2D" uid="uid://eet41yblyg10" path="res://assets/badguy.png" id="1_jlryr"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_ux0c2"]
+[ext_resource type="Texture2D" uid="uid://3c8kv14nf3le" path="res://assets/soldat.png" id="2_atwhl"]
+[ext_resource type="Texture2D" uid="uid://deudkmt3rq8yp" path="res://assets/soldat_dead.png" id="2_hrf5u"]
+[ext_resource type="AudioStream" uid="uid://buifnsj2bydsm" path="res://assets/male_hurt7-48124.mp3" id="5_8t1r1"]
+[ext_resource type="AudioStream" uid="uid://0fb64pkjkt6a" path="res://punch.mp3" id="6_ui0ol"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bmxmi"]
+radius = 0.675678
+height = 2.53763
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_1nkqr"]
+transparency = 1
+albedo_texture = ExtResource("2_hrf5u")
+texture_filter = 0
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhubk"]
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_865nu"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_eivng"]
+transparency = 1
+disable_fog = true
+albedo_texture = ExtResource("2_atwhl")
+texture_filter = 0
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="Animation" id="Animation_dodmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ioq6m"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_an1wu"]
+resource_name = "hit_player"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxtq0"]
+_data = {
+"RESET": SubResource("Animation_dodmq"),
+"hit": SubResource("Animation_ioq6m"),
+"hit_player": SubResource("Animation_an1wu")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vlayt"]
+radius = 1.01383
+
+[node name="Enemy" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144381, 0)
+script = ExtResource("1_ux0c2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07682, 0)
+shape = SubResource("CapsuleShape3D_bmxmi")
+
+[node name="Dead" type="Sprite3D" parent="."]
+transform = Transform3D(2.39938, 0, 0, 0, 1.93402, 0, 0, 0, 3.97409, 0, 0.60518, 0)
+visible = false
+material_override = SubResource("ORMMaterial3D_1nkqr")
+texture = ExtResource("2_hrf5u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.19571, 0, 0, 0, 1.43729, 0, 0, 0, 1, 0, 1.22946, 0)
+material_override = SubResource("StandardMaterial3D_nhubk")
+cast_shadow = 3
+mesh = SubResource("CapsuleMesh_865nu")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4.054, 0, 0, 0, 2.027, 0, 0, 0, 2.86, 0, 1.10518, 0)
+material_override = SubResource("ORMMaterial3D_eivng")
+cast_shadow = 0
+texture = ExtResource("1_jlryr")
+hframes = 2
+vframes = 2
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8t1r1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qxtq0")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Attack_Box" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2.99998, 0.0056853, 0.00868792, -0.00568276, 2.99999, -0.000883104, -0.00868958, 0.000866642, 2.99999, 0, 1.1516, 0)
+shape = SubResource("SphereShape3D_vlayt")
+
+[node name="PunchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ui0ol")

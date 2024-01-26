@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://tjpgski8ayih"]
+
+[ext_resource type="Script" path="res://life_bar.gd" id="1_t0ggp"]
+
+[node name="LifeBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t0ggp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 118.0
+offset_bottom = 37.0
+color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 118.0
+offset_bottom = 37.0
+color = Color(0.533333, 0.207843, 0.556863, 1)
+metadata/_edit_use_anchors_ = true

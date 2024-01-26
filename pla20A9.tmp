@@ -1,0 +1,422 @@
+[gd_scene load_steps=26 format=3 uid="uid://ban4nu5dcdmf3"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_i5pll"]
+[ext_resource type="Texture2D" uid="uid://debdeiaqxtiwo" path="res://assets/muzzleflash.png" id="3_1t5i1"]
+[ext_resource type="PackedScene" uid="uid://b6sqjoxntlc3a" path="res://handgun.tscn" id="3_g0e6d"]
+[ext_resource type="PackedScene" uid="uid://ekirosy1put7" path="res://crosshair.tscn" id="3_gg0ho"]
+[ext_resource type="PackedScene" uid="uid://18p6m6sseohy" path="res://pause_menu.tscn" id="4_hy6so"]
+[ext_resource type="PackedScene" uid="uid://dloq4rldi2r7m" path="res://assets/blender/fist.tscn" id="4_l11ax"]
+[ext_resource type="Shader" path="res://post.gdshader" id="5_hpnds"]
+[ext_resource type="Script" path="res://FPS counter.gd" id="5_ysfjk"]
+[ext_resource type="AudioStream" uid="uid://b0afuhioa73wy" path="res://assets/hitmarker_2.mp3" id="7_kgb5x"]
+[ext_resource type="PackedScene" uid="uid://cyrv7djo55ys4" path="res://interact_dialog.tscn" id="7_pm6ud"]
+[ext_resource type="AudioStream" uid="uid://07kim5mdaoos" path="res://assets/blender/beam-8-43831.mp3" id="9_dwqul"]
+[ext_resource type="PackedScene" uid="uid://yiqp50u1fhsx" path="res://stones.tscn" id="9_hhnew"]
+[ext_resource type="PackedScene" uid="uid://v1whn8kf2y36" path="res://stone_wheel.tscn" id="11_fdb4n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ylkjp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gb1lg"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ei56s"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.909804, 0, 0.909804, 1)
+albedo_texture = ExtResource("3_1t5i1")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_c4pbs"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.282, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.08, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.344, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OmniLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MuzzleFlash:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../fist:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.277355, -0.180932, -0.273433)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../fist:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.30305, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gjsqj"]
+resource_name = "punch"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../fist:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.277355, -0.180932, -0.273433), Vector3(0.277355, -0.180932, -0.717159), Vector3(0.277355, -0.180932, -0.273433)]
+}
+
+[sub_resource type="Animation" id="Animation_65vct"]
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.17376, -0.25, 0, 0.25, 0, -0.15, -0.25, 0, 0.25, 0, -0.17376, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../fist:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.277355, -0.180932, -0.273433), Vector3(0.277355, -0.25629, -0.273433), Vector3(0.277355, -0.180932, -0.273433)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../fist:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.30305, 0, 0), Vector3(-1.15144, -0.465689, 0), Vector3(-0.999829, 0, 0), Vector3(-1.15144, 0.36706, 0), Vector3(-1.30305, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_35631"]
+resource_name = "shoot"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0145626, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.025, 0.1, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.282, -0.25, 0, 0.25, 0, 0.282, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.174, -0.25, 0, 0.25, 0, -0.174, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.344, -0.25, 0, 0.25, 0, -0.344, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../MuzzleFlash:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsyok"]
+_data = {
+"RESET": SubResource("Animation_c4pbs"),
+"punch": SubResource("Animation_gjsqj"),
+"run": SubResource("Animation_65vct"),
+"shoot": SubResource("Animation_35631")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ksdf1"]
+shader = ExtResource("5_hpnds")
+shader_parameter/pixel = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_s0la6"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qk7cx"]
+shader = ExtResource("5_hpnds")
+shader_parameter/pixel = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mkjl3"]
+size = Vector3(3, 3, 3)
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 10
+collision_mask = 3
+floor_snap_length = 1.0
+script = ExtResource("1_i5pll")
+mel_weap = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83595, 0)
+shape = SubResource("SphereShape3D_ylkjp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.463461, 0)
+shape = SubResource("CapsuleShape3D_gb1lg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86376, 0.567364)
+cull_mask = 1048573
+current = true
+
+[node name="MuzzleFlash" type="Sprite3D" parent="Camera3D"]
+transform = Transform3D(0.467107, 0, 0, 0, 0.467107, 0, 0, 0, 1, 0.189966, 0.0116587, -0.796635)
+material_override = SubResource("ORMMaterial3D_ei56s")
+texture = ExtResource("3_1t5i1")
+
+[node name="gun" parent="Camera3D" instance=ExtResource("3_g0e6d")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.282, -0.08, -0.344)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/gun"]
+deterministic = true
+libraries = {
+"": SubResource("AnimationLibrary_fsyok")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D/gun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155722, 0.390765, -1.48197)
+light_color = Color(0.819608, 0.223529, 0.831373, 1)
+light_energy = 0.0
+
+[node name="fist" parent="Camera3D" instance=ExtResource("4_l11ax")]
+transform = Transform3D(1, 0, 0, 0, 0.264559, 0.964369, 0, -0.964369, 0.264559, 0.277355, -0.180932, -0.273433)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.567364)
+target_position = Vector3(0, 0, -1000)
+collision_mask = 3
+hit_back_faces = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31433)
+visible = false
+material_override = SubResource("ShaderMaterial_ksdf1")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_s0la6")
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D"]
+material = SubResource("ShaderMaterial_qk7cx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Crosshair" parent="CanvasLayer" instance=ExtResource("3_gg0ho")]
+
+[node name="FPS counter" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("5_ysfjk")
+
+[node name="DeathScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -33.5
+offset_right = 56.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -30.0
+offset_right = 46.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died !"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -4.0
+offset_right = 32.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+
+[node name="Stones" parent="CanvasLayer" instance=ExtResource("9_hhnew")]
+visible = false
+offset_top = 7.0
+offset_bottom = 7.0
+scale = Vector2(0.800002, 0.800002)
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="Interact_dialog" parent="CanvasLayer" instance=ExtResource("7_pm6ud")]
+visible = false
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_hy6so")]
+visible = false
+
+[node name="StoneWheel" parent="CanvasLayer" instance=ExtResource("11_fdb4n")]
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_dwqul")
+max_polyphony = 10
+bus = &"Sfx"
+
+[node name="HitmarkerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kgb5x")
+volume_db = -10.0
+max_polyphony = 10
+bus = &"Sfx"
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -1.58933e-08)
+shape = SubResource("BoxShape3D_mkjl3")
+
+[connection signal="animation_finished" from="Camera3D/gun/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

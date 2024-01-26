@@ -1,0 +1,7 @@
+// Game: Godot
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures;textures/Bricks;textures/Grass;textures/Roofs;textures/Tile;textures/Wood"
+}

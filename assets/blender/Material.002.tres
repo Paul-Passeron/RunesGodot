@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cebijjm7pxkks"]
+
+[ext_resource type="Texture2D" uid="uid://dh2nn7s0uya3g" path="res://assets/blender/fingergun_Cylinder Base Color.png" id="1_utnmk"]
+
+[resource]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_utnmk")
+roughness = 0.5
