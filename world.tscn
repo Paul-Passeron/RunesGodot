@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7848, 0.3925)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -81, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_ipyk8")]
-transform = Transform3D(-0.555338, 0, 0.831625, 0, 1, 0, -0.831625, 0, -0.555338, -36.8872, 11.9139, -1.4485)
+transform = Transform3D(-1.11068, 0, 1.66325, 0, 2, 0, -1.66325, 0, -1.11068, -36.8872, 11.9139, -1.4485)
 mel_weap = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -48,13 +48,37 @@ visible = false
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -117, -8, 8)
 
 [node name="Enemy" parent="Ennemies" instance=ExtResource("1_v2w51")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -224, -14.8556, -8)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -224, -14.8556, -8)
 
 [node name="Enemy2" parent="Ennemies" instance=ExtResource("1_v2w51")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -231, -14.8556, -8)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -231, -14.8556, -8)
 
 [node name="Enemy3" parent="Ennemies" instance=ExtResource("1_v2w51")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -223, -14.8556, -21)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -223, -14.8556, -21)
 
 [node name="Enemy4" parent="Ennemies" instance=ExtResource("1_v2w51")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -209, -14.8556, -9)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -209, -14.8556, -9)
+
+[node name="Enemy5" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -224, -14.8556, -36)
+
+[node name="Enemy6" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -231, -14.8556, -36)
+
+[node name="Enemy7" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -223, -14.8556, -49)
+
+[node name="Enemy8" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -209, -14.8556, -37)
+
+[node name="Enemy9" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -624, 49.1444, -36)
+
+[node name="Enemy10" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -631, 49.1444, -36)
+
+[node name="Enemy11" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -623, 49.1444, -49)
+
+[node name="Enemy12" parent="Ennemies" instance=ExtResource("1_v2w51")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -609, 49.1444, -37)

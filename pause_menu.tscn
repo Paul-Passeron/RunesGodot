@@ -48,6 +48,13 @@ offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+mouse_filter = 1
+text = "Main Menu"
+icon_alignment = 1
+
 [node name="Resume" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
@@ -70,6 +77,7 @@ text = "Quit"
 icon_alignment = 1
 expand_icon = true
 
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

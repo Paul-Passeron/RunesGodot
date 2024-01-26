@@ -14,3 +14,8 @@ func resume():
 
 func _on_resume_pressed():
 	resume()
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://start_menu.tscn")
+

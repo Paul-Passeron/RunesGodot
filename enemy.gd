@@ -17,8 +17,8 @@ var dead = false
 
 var angle_max = 1.0
 var speed_random = 0.3
-var speed = 7
-var min_distance_see = 20
+var speed = 22
+var min_distance_see = 50
 var found_player = false
 var wait_before_attack_timer: Timer = null
 var player = null

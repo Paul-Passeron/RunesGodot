@@ -11,10 +11,10 @@ extends CharacterBody3D
 
 var crouch = false
 
-const SPEED = 15
+const SPEED = 20
 const JOY_SENS_H = 500.0
 const JOY_SENS_V = 300.0
-var run_speed = 20
+var run_speed = 40
 const MOUSE_SENS = 0.3
 const JUMP_VELOCITY = 20
 const DOUBLE_JUMP_VELOCITY = 30
@@ -49,6 +49,25 @@ var has_double_jumped = false
 
 @onready var stone_wheel = $CanvasLayer/StoneWheel
 
+# Dash
+# Make sure to have a stone that "reloads" itself while dash cooldown 
+var can_dash = true
+var dash_timer : Timer = null
+var is_dashing = false
+var dash_cooldown = 2
+var dash_speed = 150
+var dash_time = 0.2
+
+func dash_timeout():
+	if is_dashing:
+		is_dashing = false
+		can_dash = false
+		dash_timer.start(dash_cooldown)
+	else:
+		can_dash = true
+
+
+
 
 func get_scope_mult():
 	if scoping:
@@ -76,6 +95,12 @@ func _ready():
 	double_jump_timer.connect("timeout", on_double_jump_timer_timeout)
 	double_jump_timer.one_shot = true
 	add_child(double_jump_timer)
+	
+	
+	dash_timer = Timer.new()
+	dash_timer.connect("timeout", dash_timeout)
+	dash_timer.one_shot = true
+	add_child(dash_timer)
 	
 func _input(event):
 	if Global.game_paused:
@@ -114,6 +139,13 @@ func _physics_process(delta):
 	
 	if dead:
 		return
+		
+	if Input.is_action_just_pressed("dash"):
+		if can_dash:
+			is_dashing = true
+			dash_timer.start(dash_time)
+			can_dash = false
+
 	var interactables = area_3d.get_overlapping_areas()
 	can_interact = len(interactables) > 0	
 	interact_dialog.visible = can_interact
@@ -124,9 +156,7 @@ func _physics_process(delta):
 		gun.visible = not gun.visible
 		fist.visible = not fist.visible
 
-		
-		
-		
+
 	if Input.is_action_just_pressed("interact") and can_interact:
 		var interactable = interactables[0].get_parent()
 		if interactable.has_method("interact"):
@@ -164,7 +194,10 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	# Handle jump.
 	if is_on_floor():
-		jump_dir = direction
+		if not is_dashing:
+			jump_dir = direction
+		else:
+			direction = jump_dir			
 		if Input.is_action_just_pressed("move_jump") :
 			velocity.y = JUMP_VELOCITY
 			double_jump_timer.start(double_jump_time)
@@ -197,6 +230,8 @@ func _physics_process(delta):
 	var speed = SPEED
 	if is_running:
 		speed = run_speed
+	if is_dashing:
+		speed = dash_speed
 	if direction:
 		if not animation_player.is_playing():
 			animation_player.play("run", -1, 0.5)
