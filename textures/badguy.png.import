@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnyuynllivqjl"
-path.s3tc="res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"
+uid="uid://eet41yblyg10"
+path="res://.godot/imported/badguy.png-a2cdca0534eb87effa210d2d271ca384.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Grass_02-128x128.png"
-dest_files=["res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"]
+source_file="res://textures/badguy.png"
+dest_files=["res://.godot/imported/badguy.png-a2cdca0534eb87effa210d2d271ca384.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

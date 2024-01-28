@@ -11,15 +11,20 @@ config_version=5
 [application]
 
 config/name="Runes"
-run/main_scene="res://world.tscn"
+run/main_scene="res://scenes/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://assets/splashscreen.png"
-config/icon="res://icon.svg"
+boot_splash/image="res://textures/splashscreen.png"
+boot_splash/use_filter=false
+config/icon="res://textures/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://ressources/default_bus_layout.tres"
 
 [autoload]
 
-Global="*res://assets/Global.gd"
+Global="*res://scripts/Global.gd"
 
 [display]
 
@@ -146,7 +151,7 @@ dec_stone={
 }
 dash={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"echo":false,"script":null)
 ]
 }
 

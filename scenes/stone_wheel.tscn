@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://v1whn8kf2y36"]
+
+[ext_resource type="Script" path="res://scripts/stone_wheel.gd" id="1_2b7pm"]
+[ext_resource type="Texture2D" uid="uid://dix0vx8d0p5r5" path="res://textures/wheel.png" id="2_m5fvh"]
+[ext_resource type="PackedScene" uid="uid://cyfackuagr4oj" path="res://scenes/RadialContainer.tscn" id="3_r6n2a"]
+[ext_resource type="PackedScene" uid="uid://caouqfajm1wih" path="res://scenes/power_stone_node.tscn" id="4_qyfe0"]
+[ext_resource type="Resource" uid="uid://bsv23bte5f7in" path="res://powerstones/dagaz.tres" id="5_kd3fy"]
+[ext_resource type="Resource" uid="uid://b8t0moi7wp8dl" path="res://powerstones/ehwaz.tres" id="6_o7urw"]
+[ext_resource type="Resource" uid="uid://fb5fja7l5h2p" path="res://powerstones/jera.tres" id="7_kqd7x"]
+
+[node name="StoneWheel" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.652875, 0.652875)
+script = ExtResource("1_2b7pm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.52656, 0.52656)
+pivot_offset = Vector2(127.061, 127.539)
+texture = ExtResource("2_m5fvh")
+
+[node name="Container" parent="." instance=ExtResource("3_r6n2a")]
+layout_mode = 1
+scale = Vector2(2.52824, 2.52824)
+button_radius = 15
+
+[node name="Dagaz" parent="Container" instance=ExtResource("4_qyfe0")]
+layout_mode = 2
+power_stone = ExtResource("5_kd3fy")
+
+[node name="Ehwaz" parent="Container" instance=ExtResource("4_qyfe0")]
+layout_mode = 2
+power_stone = ExtResource("6_o7urw")
+
+[node name="Jera" parent="Container" instance=ExtResource("4_qyfe0")]
+layout_mode = 2
+power_stone = ExtResource("7_kqd7x")

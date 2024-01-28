@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnyuynllivqjl"
-path.s3tc="res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"
+uid="uid://vctchbqa4yna"
+path.s3tc="res://.godot/imported/fist_Cylinder Base Color.png-aeecfaa6819dffa9ca3722230fc5d821.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://textures/Grass_02-128x128.png"
-dest_files=["res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"]
+source_file="res://ressources/fist_Cylinder Base Color.png"
+dest_files=["res://.godot/imported/fist_Cylinder Base Color.png-aeecfaa6819dffa9ca3722230fc5d821.s3tc.ctex"]
 
 [params]
 

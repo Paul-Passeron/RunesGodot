@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnyuynllivqjl"
-path.s3tc="res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"
+uid="uid://803ywmsxngjw"
+path.s3tc="res://.godot/imported/stone-redstone-2-SPECULAR.png-c24c4dd7332dbdcbf489425b10721bbb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Grass_02-128x128.png"
-dest_files=["res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"]
+source_file="res://textures/stone-redstone-2-SPECULAR.png"
+dest_files=["res://.godot/imported/stone-redstone-2-SPECULAR.png-c24c4dd7332dbdcbf489425b10721bbb.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ix7fmt40rnwk"]
+
+[ext_resource type="PackedScene" uid="uid://d331rfhg31g82" path="res://ressources/fingergun.glb" id="2_uj43p"]
+
+[node name="GUN" type="Node3D"]
+
+[node name="fingergun" parent="." instance=ExtResource("2_uj43p")]
+transform = Transform3D(0.0384056, -0.0566114, 0.522541, -0.525452, 0.00825444, 0.0395138, -0.0124292, -0.523885, -0.0558435, -0.184846, 0, 0.506181)

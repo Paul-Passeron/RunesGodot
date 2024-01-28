@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8drit725sotn"]
+
+[ext_resource type="PackedScene" uid="uid://f5mforvtywni" path="res://scenes/torchWall.tscn" id="2_30r1b"]
+[ext_resource type="Shader" path="res://scripts/Fire.gdshader" id="2_r28rb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h712i"]
+frequency = 0.0023
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6tlcy"]
+seamless = true
+noise = SubResource("FastNoiseLite_h712i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_agq7y"]
+render_priority = 0
+shader = ExtResource("2_r28rb")
+shader_parameter/root_color = Vector4(1, 0.75, 0.3, 1)
+shader_parameter/tip_color = Vector4(1, 0.03, 0.001, 1)
+shader_parameter/fire_alpha = 1.0
+shader_parameter/fire_speed = Vector2(0, 1)
+shader_parameter/fire_aperture = 0.19
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_6tlcy")
+
+[sub_resource type="PrismMesh" id="PrismMesh_icp2v"]
+
+[node name="Torch" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.382126, 0.290762)
+light_color = Color(0.87451, 0.505882, 0.254902, 1)
+light_energy = 16.0
+shadow_enabled = true
+omni_range = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.46, 0, 0, 0, 0.15, 0.000102699, 0.544122, 0.301052)
+material_override = SubResource("ShaderMaterial_agq7y")
+cast_shadow = 0
+mesh = SubResource("PrismMesh_icp2v")
+skeleton = NodePath("")
+
+[node name="torchWall_gltf" parent="." instance=ExtResource("2_30r1b")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

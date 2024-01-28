@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnyuynllivqjl"
-path.s3tc="res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"
+uid="uid://dsg0iqjc24rib"
+path.s3tc="res://.godot/imported/soldat_dead.png-cfdfdf15a7f5c11b3a1f43ab5000ecf3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Grass_02-128x128.png"
-dest_files=["res://.godot/imported/Grass_02-128x128.png-6fdcaf73e3834c45963a55db2fc8929e.s3tc.ctex"]
+source_file="res://textures/soldat_dead.png"
+dest_files=["res://.godot/imported/soldat_dead.png-cfdfdf15a7f5c11b3a1f43ab5000ecf3.s3tc.ctex"]
 
 [params]
 

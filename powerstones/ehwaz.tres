@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PowerStone" load_steps=3 format=3 uid="uid://b8t0moi7wp8dl"]
 
-[ext_resource type="Script" path="res://power_stone.gd" id="1_muosp"]
-[ext_resource type="Texture2D" uid="uid://huye0e6qgwh1" path="res://assets/ehwaz.png" id="2_pvly7"]
+[ext_resource type="Script" path="res://scripts/power_stone.gd" id="1_muosp"]
+[ext_resource type="Texture2D" uid="uid://huye0e6qgwh1" path="res://textures/ehwaz.png" id="2_pvly7"]
 
 [resource]
 script = ExtResource("1_muosp")

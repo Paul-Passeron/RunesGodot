@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0omr1v6e8478"]
+
+[ext_resource type="Material" uid="uid://dg8m5w32t7dhd" path="res://ressources/csgmat.tres" id="1_auplk"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D"]
+material_override = ExtResource("1_auplk")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-100, -1.50996e-07, 0, 1.50996e-05, -1, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-64.7591, -1.50996e-07, 0, 9.77836e-06, -1, 0, 0, 0, 100, -108.386, -18.9182, 0)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(-64.7591, -1.50996e-07, 0, 9.77836e-06, -1, 0, 0, 0, 100, -108.386, -4.15582, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-64.7591, -1.50996e-07, 0, 4.92856e-13, 4.37114e-08, 43.7691, -9.77836e-06, 1, -1.91321e-06, -108.386, 3.47732, -49.2017)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-64.7591, -1.50996e-07, 0, 4.92856e-13, 4.37114e-08, 43.7691, -9.77836e-06, 1, -1.91321e-06, -108.386, 3.47732, 50.8881)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1.93635e-05, -1, 1.91321e-06, 7.56869e-13, 4.37114e-08, 43.7691, -99.4492, -1.94707e-07, 2.39128e-13, -139.375, 3.47732, 3.60148)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1.10857e-05, -1, 1.91321e-06, 4.33311e-13, 4.37114e-08, 43.7691, -56.9352, -1.94707e-07, 2.39128e-13, -77.3112, 3.47732, 30.3136)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1.10857e-05, -1, 1.91321e-06, 4.33311e-13, 4.37114e-08, 43.7691, -56.9352, -1.94707e-07, 2.39128e-13, -77.3112, 3.47732, -30.8907)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1.10857e-05, -1, 9.49647e-07, 4.33311e-13, 4.37114e-08, 21.7254, -56.9352, -1.94707e-07, 1.18694e-13, -77.2947, 6.33946, -1.02764)
+size = Vector3(0.960449, 1, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1.10857e-05, -1, 9.49647e-07, 4.33311e-13, 4.37114e-08, 21.7254, -56.9352, -1.94707e-07, 1.18694e-13, -77.3015, -21.1218, -1.02758)
+size = Vector3(0.960449, 1, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -116.625, -9.1816, -34.0715)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -117.476, -9.1816, 34.1633)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -117.476, -9.1816, -0.0248146)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -136.93, -9.1816, -0.190916)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -136.93, -9.1816, 34.3277)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -136.93, -9.1816, -34.0514)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -81.2172, -9.1816, -34.0715)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -82.0676, -9.1816, 34.1633)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -101.522, -9.1816, -0.190916)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -101.522, -9.1816, 34.3277)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="."]
+transform = Transform3D(7.78829e-07, -4, -1.49056e-06, 0, -1.74846e-07, 34.1, -4, -7.78829e-07, -2.90222e-13, -101.522, -9.1816, -34.0514)
+
+[node name="Tunnel" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1.05767, 1.16186, 0, -0.370451, 3.3172, 0, 0, 0, 2.14655, -51.2155, -1.36695, -2.37901)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Tunnel"]
+transform = Transform3D(-8.44439e-08, -0.103528, 27.0459, -2.26267e-08, 0.38637, 7.24693, -2, 0, -1.22392e-06, -13, -3.2, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Tunnel"]
+transform = Transform3D(-8.44439e-08, -0.0517638, 27.0459, -2.26267e-08, 0.193185, 7.24693, -2, 0, -1.22392e-06, -13.4918, -1.36474, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Tunnel"]
+transform = Transform3D(-0.517638, 1.60606e-08, 27.0459, 1.93185, -9.27259e-09, 7.24693, 8.74227e-08, 0.3, -1.22392e-06, -13.2588, -2.23407, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Tunnel"]
+transform = Transform3D(-0.517638, 1.60606e-08, 27.0459, 1.93185, -9.27259e-09, 7.24693, 8.74227e-08, 0.3, -1.22392e-06, -13.2588, -2.23407, 2.38419e-07)

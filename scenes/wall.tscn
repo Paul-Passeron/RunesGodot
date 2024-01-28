@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx8ltq0bbw3jr"]
+
+[ext_resource type="Texture2D" uid="uid://bpjtjjm7inn02" path="res://textures/wall2.png" id="1_j4cq3"]
+[ext_resource type="Texture2D" uid="uid://bqflvvaa0klb4" path="res://textures/wall_normal.png" id="2_psol4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fyr6"]
+albedo_texture = ExtResource("1_j4cq3")
+normal_texture = ExtResource("2_psol4")
+heightmap_scale = 8.58
+heightmap_texture = ExtResource("2_psol4")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aw2t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gluom"]
+lightmap_size_hint = Vector2i(10, 15)
+material = SubResource("StandardMaterial3D_0aw2t")
+add_uv2 = true
+uv2_padding = 0.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0h6b6"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Wall" type="MeshInstance3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1, -1, 1, 0)
+material_override = SubResource("StandardMaterial3D_8fyr6")
+cast_shadow = 2
+extra_cull_margin = 0.1
+mesh = SubResource("BoxMesh_gluom")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0h6b6")

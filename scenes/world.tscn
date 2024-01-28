@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjesfl612x7w0"]
+
+[ext_resource type="PackedScene" uid="uid://hfm3act06lw4" path="res://scenes/first_level.tscn" id="1_p7o1k"]
+[ext_resource type="PackedScene" uid="uid://ban4nu5dcdmf3" path="res://scenes/player.tscn" id="2_rowkp"]
+[ext_resource type="Texture2D" uid="uid://noll4fku5tbg" path="res://textures/PurplyBlueSky.png" id="3_g4oew"]
+[ext_resource type="PackedScene" uid="uid://des7dsc3vwbfx" path="res://scenes/enemy.tscn" id="4_41rp3"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vgfpx"]
+panorama = ExtResource("3_g4oew")
+
+[sub_resource type="Sky" id="Sky_kh6un"]
+sky_material = SubResource("PanoramaSkyMaterial_vgfpx")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_rjill"]
+background_mode = 2
+sky = SubResource("Sky_kh6un")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.1
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 0.32
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16, 0)
+
+[node name="Environment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.7848, 0.3925)
+
+[node name="First level" parent="Environment" instance=ExtResource("1_p7o1k")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -81, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_rowkp")]
+transform = Transform3D(-1.11068, 0, 1.66325, 0, 2, 0, -1.66325, 0, -1.11068, -36.8872, 11.9139, -1.4485)
+mel_weap = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rjill")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.948217, 0.28298, -0.144246, -0.311058, -0.91919, 0.241521, -0.0642443, 0.273884, 0.959615, 2.62265, 26.0995, -2.36376)
+visible = false
+
+[node name="Ennemies" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -117, -8, 8)
+
+[node name="Enemy" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -224, -14.8556, -8)
+
+[node name="Enemy2" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -231, -14.8556, -8)
+
+[node name="Enemy3" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -223, -14.8556, -21)
+
+[node name="Enemy4" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -209, -14.8556, -9)
+
+[node name="Enemy5" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -224, -14.8556, -36)
+
+[node name="Enemy6" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -231, -14.8556, -36)
+
+[node name="Enemy7" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -223, -14.8556, -49)
+
+[node name="Enemy8" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -209, -14.8556, -37)
+
+[node name="Enemy9" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -624, 49.1444, -36)
+
+[node name="Enemy10" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -631, 49.1444, -36)
+
+[node name="Enemy11" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -623, 49.1444, -49)
+
+[node name="Enemy12" parent="Ennemies" instance=ExtResource("4_41rp3")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -609, 49.1444, -37)
